@@ -7,5 +7,34 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
+  let who = ["The dog", "My grandma", "The mailman", "My bird"];
+  let action = ["ate", "peed", "crushed", "broke"];
+  let what = ["my homework", "my phone", "the car"];
+  let when = [
+    "before the class",
+    "when I was sleeping",
+    "while I was exercising",
+    "during my lunch",
+    "while I was praying"
+  ];
+
+  function randomNumber(array) {
+    let random = Math.floor(Math.random() * array.length);
+    return random;
+  }
+
+  function generateExcuse() {
+    let randomWho = who[randomNumber(who)];
+    let randomAction = action[randomNumber(action)];
+    let randomWhat = what[randomNumber(what)];
+    let randomWhen = when[randomNumber(when)];
+
+    console.log(randomAction);
+
+    return `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}`;
+  }
+
+  console.log(who[randomNumber(who)]);
+  let excuse = document.getElementById("excuse");
+  excuse.innerText = generateExcuse();
 };
